@@ -1,5 +1,3 @@
-\c tarjetas-de-credito
-
 ALTER TABLE consumo DROP CONSTRAINT consumo_nrocomercio_fk;
 ALTER TABLE consumo DROP CONSTRAINT consumo_nrotarjeta_fk;
 ALTER TABLE alerta DROP CONSTRAINT alerta_nrorechazo_fk;
@@ -21,5 +19,3 @@ ALTER TABLE compra DROP CONSTRAINT compra_pk;
 ALTER TABLE comercio DROP CONSTRAINT comercio_pk;
 ALTER TABLE tarjeta DROP CONSTRAINT tarjeta_pk;
 ALTER TABLE cliente DROP CONSTRAINT cliente_pk;
-
-\c postgres

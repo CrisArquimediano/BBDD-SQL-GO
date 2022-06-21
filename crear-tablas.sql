@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS tarjetas-de-credito;
-CREATE DATABASE tarjetas-de-credito;
-
-\c tarjetas-de-credito
-
 CREATE TABLE cliente(nrocliente int, nombre text, apellido text, domicilio text, telefono char(12));
 
 CREATE TABLE tarjeta(nrotarjeta char(16), nrocliente int, validadesde char(6), validahasta char(6), codseguridad char(4),
@@ -30,5 +25,3 @@ descripcion text);
 --tabla que no es parte del modelo de datos pero cuyo propósito es probar las funciones
 
 CREATE TABLE consumo(nrotarjeta char(16), codseguridad char(4), nrocomercio int, monto decimal(7, 2));
-
-\c postgres
