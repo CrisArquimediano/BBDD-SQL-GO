@@ -1,0 +1,36 @@
+= Bases de datos relacionales: PostgreSQL, PL/pgSQL, Go
+
+Cristian Correa <ccorrea111997@gmail.com>;
+
+
+v1, {docdate}. 
+
+:title-page:
+:numbered:
+:source-highlighter: coderay
+:tabsize: 4
+
+== Introducción
+
+Proyecto basado en el Trabajo Práctico final para la materia Bases de datos I de la Licenciatura en Sistemas de la Universidad Nacional de General Sarmiento.
+
+El objetivo de este proyecto es profundizar en el manejo y gestión de una base de datos e indagar en dos lenguajes como son Go y PL/pgSQL.
+
+Las principales diferencias con la solución entregada (lunes 13/06/2022, nota obtenida: 9) del Trabajo Práctico mencionado radican en cuestiones de diseño y buenas prácticas -por ejemplo, se separan los archivos .sql del código escrito en Go, para evitar longitudes que sacrifican la claridad.
+
+== Desarrollo
+:hide-uri-scheme: 
+
+En primer lugar se creó el repositorio en GitHub. Procedimiento de rutina, solo un detalle a tener en cuenta: se debe obtener un token personal para subir los commits al repositorio (hacia el final del video de HolaMundo sobre Git se explica superclaro, aunque es realmente sencillo y rápido).
+
+Luego de crearse los archivos .sql con las sentencias para crear las tablas, agregar claves, etcétera, se investigó cómo hacer para ejecutar dichos arhivos desde Go y no copiar y pegar todo el código SQL *dentro* de Go.
+
+Para realizarlo, se importó https://github.com/tanimutomo/sqlfile.
+
+- ¿Cómo hacer para ver lo que se va modificando de la bases de datos creada? _(Útil para el desarrollo de la aplicación.)_
+
+Primero tiene que existir el usuario (en este caso de usa el usuario default que es _postgres_) que se especifica al abrir la base de datos.
+
+Una vez hecho esto, basta con ejecutar el código para crear la base de datos, e ingresar a ella (comandos desde la terminal en el directorio donde se aloja el proyecto: _sudo -i -u postgres_, _psql_, _\c nombre-base-de-datos_). (Nota: es conveniente trabajar con dos o más pestañas para mayor comodidad. En una se está en dentro de la base de datos, en otra se escribe el código y se ejecuta Go, etc.)
+
+
