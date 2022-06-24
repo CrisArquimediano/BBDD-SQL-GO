@@ -95,9 +95,32 @@ func eliminarClaves() {
 	fmt.Println("Claves eliminadas.")
 }
 
+func agregarRegistros() {
+	db, err := sql.Open("postgres", "user=postgres host=localhost dbname=creditos sslmode=disable")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	s := sqlfile.New()
+
+	err = s.Files("clientes.sql", "comercios.sql", "tarjetas.sql")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = s.Exec(db)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Registros agregados.")
+}
+
 func main() {
 	crearBaseDeDatos()
 	crearTablas()
 	agregarClaves()
 	eliminarClaves()
+	agregarRegistros()
 }
