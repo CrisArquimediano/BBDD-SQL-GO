@@ -33,4 +33,8 @@ Primero tiene que existir el usuario (en este caso de usa el usuario default que
 
 Una vez hecho esto, basta con ejecutar el código para crear la base de datos, e ingresar a ella (comandos desde la terminal en el directorio donde se aloja el proyecto: _sudo -i -u postgres_, _psql_, _\c nombre-base-de-datos_). (Nota: es conveniente trabajar con dos o más pestañas para mayor comodidad. En una se está en dentro de la base de datos, en otra se escribe el código y se ejecuta Go, etc.)
 
+- Agregar múltiples archivos SQL.
+
+Simplemente se utiliza 'Files' en lugar de 'File' y, con los archivos entre comillas, se separan con coma.
+
 
